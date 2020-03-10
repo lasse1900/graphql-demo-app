@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/lauri-kyttala/prisma-test/dev
-# timestamp: Tue Mar 10 2020 14:53:27 GMT+0200 (Eastern European Standard Time)
+# timestamp: Tue Mar 10 2020 15:30:05 GMT+0200 (Eastern European Standard Time)
 
 type AggregatePost {
   count: Int!
