@@ -14,6 +14,12 @@ const resolvers = {
     post(parent, { id }, ctx, info) {
       return ctx.db.query.post({ where: { id } }, info)
     },
+    linksFeed(parent, args, ctx, info) {
+      return ctx.db.query.links({}, info)
+    },
+    singleLink(parent, { id }, ctx, info) {
+      return ctx.db.query.link({ where: { id: id } }, info)
+    },
   },
   Mutation: {
     createDraft(parent, { title, text }, ctx, info) {
@@ -35,6 +41,17 @@ const resolvers = {
         {
           where: { id },
           data: { isPublished: true },
+        },
+        info,
+      )
+    },
+    newLink(parent, { url, description }, ctx, info) {
+      return ctx.db.mutation.createLink(
+        {
+          data: {
+            url,
+            description,
+          },
         },
         info,
       )
