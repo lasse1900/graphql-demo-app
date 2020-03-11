@@ -1,0 +1,58 @@
+query Feed {
+  feed {
+    id
+    title
+    text
+    isPublished
+  }
+}
+
+mutation updateLink {
+  updateLink(
+    id: "ck7lyow0mu9sm09502x86scbi"
+    url: "myyrmäki 2"
+    description: "test"
+  ) {
+    id
+    url
+    description
+  }
+}
+
+mutation deleteLink {
+  deleteLink(id: "ck7m0p8ywuqzy0950vboz1e2c") {
+    url
+    description
+  }
+}
+
+query linksFeed {
+  linksFeed {
+    id
+    description
+    url
+  }
+}
+
+query singleLink {
+  singleLink(id: "ck7lyow0mu9sm09502x86scbi") {
+    id
+    url
+  }
+}
+
+query Feed {
+  feed {
+    id
+    title
+    text
+    isPublished
+  }
+}
+
+mutation newLink {
+  newLink(url: "http://tanssit.fi", description: "myyrmaki") {
+    id
+    description
+  }
+}
