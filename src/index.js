@@ -56,6 +56,25 @@ const resolvers = {
         info,
       )
     },
+    updateLink(parent, { id, url, description }, ctx, info) {
+      const link = {}
+      if (link) {
+        link.url = url
+      }
+      if (description) {
+        link.description = description
+      }
+      return ctx.db.mutation.updateLink(
+        {
+          data: link,
+          where: { id },
+        },
+        info,
+      )
+    },
+    deleteLink(parent, { id }, ctx, info) {
+      return ctx.db.mutation.deleteLink({ where: { id } }, info)
+    }
   },
 }
 
